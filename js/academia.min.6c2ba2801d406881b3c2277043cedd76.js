@@ -2712,8 +2712,7 @@ function(e) {
               console.log("Error: citation copy failed.")
           }
           window.getSelection().removeRange(t)
-      }),
-      p();
+      })
       let n = ".js-github-release";
       e(n).length > 0 && g(n, e(n).data("repo")),
       e(".js-search").click(function(e) {
