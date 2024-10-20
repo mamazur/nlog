@@ -2552,23 +2552,6 @@ function(e) {
           return n && o
       }
   });
-  let u = e(".filter-search").keyup(h(function() {
-      i = new RegExp(u.val(),"gi"),
-      n.isotope()
-  }));
-  function h(e, t) {
-      let n;
-      return t = t || 100,
-      function() {
-          clearTimeout(n);
-          let o = arguments
-            , i = this;
-          function a() {
-              e.apply(i, o)
-          }
-          n = setTimeout(a, t)
-      }
-  }
   function c(e) {
       let t = "";
       for (let n in e)
@@ -2616,31 +2599,6 @@ function(e) {
           opacity: 1
       }, 200),
       e("#search-query").focus())
-  }
-  function b(t, n, s, o) {
-      e("body").hasClass("dark") ? (e("body").css({
-          opacity: 0,
-          visibility: "visible"
-      }).animate({
-          opacity: 1
-      }, 500),
-      e("body").removeClass("dark"),
-      t && (n.disabled = !1,
-      s.disabled = !0),
-      e(".js-dark-toggle i").removeClass("fa-sun").addClass("fa-moon"),
-      localStorage.setItem("dark_mode", "0"),
-      o && location.reload()) : (e("body").css({
-          opacity: 0,
-          visibility: "visible"
-      }).animate({
-          opacity: 1
-      }, 500),
-      e("body").addClass("dark"),
-      t && (n.disabled = !0,
-      s.disabled = !1),
-      e(".js-dark-toggle i").removeClass("fa-moon").addClass("fa-sun"),
-      localStorage.setItem("dark_mode", "1"),
-      o && location.reload())
   }
   function j() {
       e(".carousel").each(function() {
