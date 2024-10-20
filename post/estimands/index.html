@@ -2,35 +2,28 @@
 <html lang=en-us>
 
 <head>
-    <meta charset=utf-8>
-    <meta name=viewport content="width=device-width,initial-scale=1">
-    <meta http-equiv=X-UA-Compatible content="IE=edge">
-    <meta name=author content="Nina Loginova">
-    <meta name=description
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
-    <meta name=theme-color content="#fc6f5c">
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
-        integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.0/css/all.css
-        integrity=sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css
-        integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin=anonymous>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css
-        crossorigin=anonymous title=hl-light>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css
-        crossorigin=anonymous title=hl-dark disabled>
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css
+    <!-- Meta Information -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Nina Loginova">
+    <meta name="theme-color" content="#fc6f5c">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css"
+        integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+        integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css"
+        integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css"
+        crossorigin="anonymous" title="hl-light">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css"
         integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
-        crossorigin=anonymous>
-    <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+        crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
     <link rel=stylesheet href=../../css/academia.min.b246554d075350d61b44c126dfbcbe05.css>
-    <script async src=https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js
-        integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g=="
-        crossorigin=anonymous></script>
-    <link rel=icon type=image/png href=/img/icon.png>
-    <meta property="og:description"
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
-    <meta property="og:locale" content="en-us">
     <title>Estimands | Nina Loginova</title>
 </head>
 
@@ -77,7 +70,8 @@
                     <img class="img-fluid w-100" src=./featured.jpg itemprop=image alt>
                     <span class=article-header-caption>
                         Image credit:
-                        <a href=https://pixabay.com/de/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6973869 />
+                        <a
+                            href=https://pixabay.com/de/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6973869 />
                         <strong>Pixabay</strong>
                         </a>
                     </span>
@@ -99,28 +93,53 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
-                <p>In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.</p>
-                <p>An estimand is essentially the specific aspect of the treatment effect that we aim to measure. It represents the precise question we want to answer about the impact of the treatment. For instance, if a new drug is being tested, the estimand might be how much the drug reduces symptoms compared to a placebo. 
-         
+                <p>In clinical trials, one of the fundamental goals is to understand the effect of a treatment or
+                    intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This
+                    is where the concept of estimands becomes crucial.</p>
+                <p>An estimand is essentially the specific aspect of the treatment effect that we aim to measure. It
+                    represents the precise question we want to answer about the impact of the treatment. For instance,
+                    if a new drug is being tested, the estimand might be how much the drug reduces symptoms compared to
+                    a placebo.
+
                 </p>
                 <p>
-                    There are several types of estimands, each addressing different aspects of how we measure the treatment effect. One common type is the treatment effect on the entire study population, which considers how well the treatment works if everyone follows the study protocol exactly. Another type looks at the treatment effect specifically for those participants who complete the study, providing insight into the effectiveness among those who adhere to the treatment regimen. Additionally, there are estimands that consider real-world conditions, accounting for the fact that participants might not always follow the treatment instructions perfectly.
+                    There are several types of estimands, each addressing different aspects of how we measure the
+                    treatment effect. One common type is the treatment effect on the entire study population, which
+                    considers how well the treatment works if everyone follows the study protocol exactly. Another type
+                    looks at the treatment effect specifically for those participants who complete the study, providing
+                    insight into the effectiveness among those who adhere to the treatment regimen. Additionally, there
+                    are estimands that consider real-world conditions, accounting for the fact that participants might
+                    not always follow the treatment instructions perfectly.
 
                 <p>
                     <em>
-                        European Medicines Agency. (2020). ICH E9 (R1) addendum on estimands and sensitivity analysis in clinical trials to the guideline on statistical principles for clinical trials. 
-                          <a
+                        European Medicines Agency. (2020). ICH E9 (R1) addendum on estimands and sensitivity analysis in
+                        clinical trials to the guideline on statistical principles for clinical trials.
+                        <a
                             href=https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf>https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf</a>
                     </em>
                 </p>
-                
+
             </div>
             <div class=article-tags>
-                <a class="badge badge-light" href=/academia/site/tags/chi-square/>Estimands</a>
-                <a class="badge badge-light" href=/academia/site/tags/probabilities/>Clinical Studies</a>
+                <a class="badge badge-light" href=/academia/site/tags/chi-square />Estimands</a>
+                <a class="badge badge-light" href=/academia/site/tags/probabilities />Clinical Studies</a>
             </div>
         </div>
     </article>
+    <div class=container>
+        <footer class=site-footer>
+            <div class=container>
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+
+                        <p class=mb-0>Copyright © 2024</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- External JavaScript Files -->
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js
@@ -137,19 +156,8 @@
     <script>
         hljs.initHighlightingOnLoad()
     </script>
-    <script src=/academia/site/js/academia.min.6c2ba2801d406881b3c2277043cedd76.js></script>
-    <div class=container>
-        <footer class=site-footer>
-            <div class=container>
-                <div class="row align-items-center">
-                    <div class="col-md-6 mb-4 mb-md-0">
-
-                        <p class=mb-0>Copyright © 2024</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src=./../../js/academia.min.6c2ba2801d406881b3c2277043cedd76.js></script>
 </body>
 
 </html>
