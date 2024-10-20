@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang=en-us>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=author content="Nina Loginova">
+    <meta name=description
+        content="Survival analysis is a key statistical method in clinical research, used to analyze the time until an event of interest, such as death, relapse, or recovery. Unlike traditional methods, it can handle censored data, where the event has not occurred for some subjects by the study&rsquo;s end.
+A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametric method for estimating the survival function. The survival function S(t) represents the probability that a subject will survive beyond time t :">
+    <meta name=theme-color content="#fc6f5c">
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
+        integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
+    <link rel=stylesheet href=https://use.fontawesome.com/releases/v5.6.0/css/all.css
+        integrity=sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h crossorigin=anonymous>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css
+        integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin=anonymous>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css
+        crossorigin=anonymous title=hl-light>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css
+        crossorigin=anonymous title=hl-dark disabled>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.css
+        integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+        crossorigin=anonymous>
+    <link rel=stylesheet href="https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans|Roboto+Mono&display=swap">
+    <link rel=stylesheet href=../../css/academia.min.b246554d075350d61b44c126dfbcbe05.css>
+    <script async src=https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js
+        integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g=="
+        crossorigin=anonymous></script>
+    <link rel=icon type=image/png href=/img/icon.png>
+    <meta property="og:description"
+        content="Survival analysis is a key statistical method in clinical research, used to analyze the time until an event of interest, such as death, relapse, or recovery. Unlike traditional methods, it can handle censored data, where the event has not occurred for some subjects by the study&rsquo;s end.
+A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametric method for estimating the survival function. The survival function S(t) represents the probability that a subject will survive beyond time t :">
+    <meta property="og:locale" content="en-us">
+    <title>Survival Analysis and Kaplan-Meier Estimate in Clinical Studies | Nina Loginova</title>
+</head>
+
+<body id=top data-spy=scroll data-target=#TableOfContents data-offset=71>
+    <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id=navbar-main>
+        <div class=container>
+            <a class=navbar-brand href=../../index.html>Nina Loginova</a>
+            <button type=button class=navbar-toggler data-toggle=collapse data-target=#navbar aria-controls=navbar
+                aria-expanded=false aria-label="Toggle navigation">
+                <span>
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id=navbar>
+                <ul class="navbar-nav ml-auto">
+                    <li class=nav-item>
+                        <a class=nav-link href=../../index.html#about>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class=nav-item>
+                        <a class=nav-link href=../../index.html#experience>
+                            <span>Experience</span>
+                        </a>
+                    </li>
+                    <li class=nav-item>
+                        <a class=nav-link href=../../index.html##publications>
+                            <span>Publications</span>
+                        </a>
+                    </li>
+                    <li class=nav-item>
+                        <a class=nav-link href=../../index.html#posts>
+                            <span>Posts</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <article class="article py-5" itemscope itemtype=http://schema.org/Article>
+        <div class="container split-header">
+            <div class="row justify-content-center">
+                <div class=col-lg-8>
+                    <img class="img-fluid w-100" src=./featured.jpg itemprop=image alt>
+                    <span class=article-header-caption>
+                        Image credit:
+                        <a href=https://pixabay.com/de/illustrations/ai-generiert-virus-bakterien-9083209 />
+                        <strong>Pixabay</strong>
+                        </a>
+                    </span>
+                </div>
+                <div class=col-lg-8>
+                    <h1 itemprop=name>Survival Analysis and Kaplan-Meier Estimate in Clinical Studies</h1>
+                    <meta content itemprop=datePublished>
+                    <meta content itemprop=dateModified>
+                    <div class=article-metadata>
+                        <div>
+                            <span itemprop="author name" itemtype=http://schema.org/Person>
+                                <a href=https://de.linkedin.com/in/nina-loginova />Nina Loginova</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class=article-container>
+            <div class=article-style itemprop=articleBody>
+                <p>Survival analysis is a key statistical method in clinical research, used to analyze the time until an
+                    event of interest, such as death, relapse, or recovery. Unlike traditional methods, it can handle
+                    censored data, where the event has not occurred for some subjects by the study &rsquo;s end.
+                    A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametric method for
+                    estimating the survival function. The survival function S(t) represents the probability that a
+                    subject will survive beyond time t :</p>
+                <p>S(t)=∏_(t_i≤t)▒(1-d_i/n_i )</p>
+                <p>where t_i denotes the time of the i-th event, d_i is the number of events at t_i , and n_i is the
+                    number of individuals at risk just before t_i .
+                    The Kaplan-Meier curve is constructed by recalculating the survival probability at each event time,
+                    accurately reflecting survival over time, for example for analyzing survival times of COVID-19
+                    patients (Liu et. al, 2021).
+                <div class=col-lg-4>
+                    <img class="img-fluid w-40" src=./covid-19.png itemprop=image alt>
+                    <span class=article-header-caption>
+                        Image credit:
+                        <a href=https://pixabay.com/de/illustrations/covid-19-coronavirus-virus-6627313>
+                        <strong>Pixabay</strong>
+                        </a>
+                    </span>
+                </div>
+                </p>
+                <p>
+                    In clinical studies, the Kaplan-Meier estimate is often used to compare the efficacy of treatments
+                    by plotting the survival curves for different patient groups. To test the significance of the
+                    difference between these survival curves, the log-rank test is commonly used. The log-rank statistic
+                    is calculated as:
+                    χ^2=[∑_i▒(O_i-E_i ) ]^2/(∑_i▒V_i )
+                    where O_i is the observed number of events in the i-th group, E_i is the expected number of events
+                    under the null hypothesis, V_i is the variance of the number of events.
+                    The null hypothesis of the log-rank test is that there is no difference in the survival experience
+                    between the groups being compared. Specifically, it posits that the survival curves of the different
+                    groups are the same, meaning that the probability of the event (such as death or relapse) occurring
+                    at any given time point is the same across all groups.
+                    In other words, under the null hypothesis, any observed differences in the survival curves are due
+                    to random variation rather than a true difference between the groups. If the log-rank test yields a
+                    p-value below a pre-specified significance level (e.g., 0.05), the null hypothesis is rejected,
+                    suggesting that there is a statistically significant difference in survival between the groups.</p>
+
+                <p>
+                    <em>
+                        Collett, D. (2015). Modelling survival data in medical research (3rd ed.). CRC Press. <a
+                            href=https://doi.org/10.1201/b18348>https://doi.org/10.1201/b18348</a>
+                    </em>
+                </p>
+                <p>
+                    <em>
+                        Liu X, Ahmad Z, Gemeay AM, Abdulrahman AT, Hafez EH, Khalil N (2021). Modeling the survival
+                        times of
+                        the COVID-19 patients with a new statistical model: A case study from China. PLoS ONE 16(7):
+                        e0254999. <a
+                            href=https://doi.org/10.1371/journal.pone.0254999>https://doi.org/10.1371/journal.pone.0254999</a>
+
+                    </em>
+                </p>
+            </div>
+            <div class=article-tags>
+                <a class="badge badge-light" href=/academia/site/tags/chi-square/>Kaplan-Meier</a>
+                <a class="badge badge-light" href=/academia/site/tags/probabilities/>Clinical Studies</a>
+            </div>
+        </div>
+    </article>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js
+        integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js
+        integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js
+        integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js
+        integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin=anonymous></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/leaflet.js
+        integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+        crossorigin=anonymous></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src=/academia/site/js/academia.min.6c2ba2801d406881b3c2277043cedd76.js></script>
+    <div class=container>
+        <footer class=site-footer>
+            <div class=container>
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+
+                        <p class=mb-0>Copyright © 2024</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
