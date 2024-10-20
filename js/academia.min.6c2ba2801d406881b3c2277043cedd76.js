@@ -2596,58 +2596,6 @@ function(e) {
       n.isotope(),
       e(".pubtype-select").val(i)
   }
-  function p() {
-      if (e("#map").length) {
-          let i = e("#map-provider").val()
-            , t = e("#map-lat").val()
-            , n = e("#map-lng").val()
-            , s = parseInt(e("#map-zoom").val())
-            , o = e("#map-dir").val()
-            , a = e("#map-api-key").val();
-          if (i == 1) {
-              let e = new GMaps({
-                  div: "#map",
-                  lat: t,
-                  lng: n,
-                  zoom: s,
-                  zoomControl: !0,
-                  zoomControlOpt: {
-                      style: "SMALL",
-                      position: "TOP_LEFT"
-                  },
-                  panControl: !1,
-                  streetViewControl: !1,
-                  mapTypeControl: !1,
-                  overviewMapControl: !1,
-                  scrollwheel: !0,
-                  draggable: !0
-              });
-              e.addMarker({
-                  lat: t,
-                  lng: n,
-                  click: function() {
-                      let s = "https://www.google.com/maps/place/" + encodeURIComponent(o) + "/@" + t + "," + n + "/";
-                      window.open(s, "_blank")
-                  },
-                  title: o
-              })
-          } else {
-              let e = new L.map("map").setView([t, n], s);
-              i == 3 && a.length ? L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-                  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-                  maxZoom: 18,
-                  id: "mapbox.streets",
-                  accessToken: a
-              }).addTo(e) : L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                  maxZoom: 19,
-                  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              }).addTo(e);
-              let r = L.marker([t, n]).addTo(e)
-                , c = t + "," + n + "#map=" + s + "/" + t + "/" + n + "&layers=N";
-              r.bindPopup(o + '<p><a href="https://www.openstreetmap.org/directions?engine=osrm_car&route=' + c + '">Routing via OpenStreetMap</a></p>')
-          }
-      }
-  }
   function g(t, n) {
       e.getJSON("https://api.github.com/repos/" + n + "/tags").done(function(n) {
           let s = n[0];
