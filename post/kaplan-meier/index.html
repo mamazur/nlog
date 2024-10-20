@@ -28,6 +28,7 @@ A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametr
     <script async src=https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js
         integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g=="
         crossorigin=anonymous></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel=icon type=image/png href=/img/icon.png>
     <meta property="og:description"
         content="Survival analysis is a key statistical method in clinical research, used to analyze the time until an event of interest, such as death, relapse, or recovery. Unlike traditional methods, it can handle censored data, where the event has not occurred for some subjects by the study&rsquo;s end.
@@ -107,44 +108,62 @@ A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametr
                     A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametric method for
                     estimating the survival function. The survival function S(t) represents the probability that a
                     subject will survive beyond time t :</p>
-                <p>S(t)=∏_(t_i≤t)▒(1-d_i/n_i )</p>
-                <p>where t_i denotes the time of the i-th event, d_i is the number of events at t_i , and n_i is the
-                    number of individuals at risk just before t_i .
-                    The Kaplan-Meier curve is constructed by recalculating the survival probability at each event time,
-                    accurately reflecting survival over time, for example for analyzing survival times of COVID-19
-                    patients (Liu et. al, 2021).
+
+                <p>
+                    \[
+                    S\left(t\right)=\prod_{t_i\le t}\left(1-\frac{d_i}{n_i}\right)
+                    \]
+                </p>
+                <p><small>where \( t_i \) denotes the time of the i-th event, \( d_i \) is the number of events at \(
+                        t_i \), and \( n_i \) is the number of individuals at risk just before \( t_i \).</small></p>
+
+                <p>The Kaplan-Meier curve is constructed by recalculating the survival probability at each event time,
+                    accurately reflecting survival over time, for example for analyzing <strong>survival times of
+                        COVID-19 patients</strong> (Liu et. al, 2021).</p>
+
                 <div class=col-lg-4>
                     <img class="img-fluid w-40" src=./covid-19.png itemprop=image alt>
                     <span class=article-header-caption>
                         Image credit:
                         <a href=https://pixabay.com/de/illustrations/covid-19-coronavirus-virus-6627313>
-                        <strong>Pixabay</strong>
+                            <strong>Pixabay</strong>
                         </a>
                     </span>
                 </div>
-                </p>
-                <p>
-                    In clinical studies, the Kaplan-Meier estimate is often used to compare the efficacy of treatments
-                    by plotting the survival curves for different patient groups. To test the significance of the
-                    difference between these survival curves, the log-rank test is commonly used. The log-rank statistic
-                    is calculated as:
-                    χ^2=[∑_i▒(O_i-E_i ) ]^2/(∑_i▒V_i )
-                    where O_i is the observed number of events in the i-th group, E_i is the expected number of events
-                    under the null hypothesis, V_i is the variance of the number of events.
-                    The null hypothesis of the log-rank test is that there is no difference in the survival experience
-                    between the groups being compared. Specifically, it posits that the survival curves of the different
-                    groups are the same, meaning that the probability of the event (such as death or relapse) occurring
-                    at any given time point is the same across all groups.
-                    In other words, under the null hypothesis, any observed differences in the survival curves are due
-                    to random variation rather than a true difference between the groups. If the log-rank test yields a
-                    p-value below a pre-specified significance level (e.g., 0.05), the null hypothesis is rejected,
-                    suggesting that there is a statistically significant difference in survival between the groups.</p>
+
+                <p>In clinical studies, the Kaplan-Meier estimate is often used to <span
+                        style="color: #a1170d;"><strong>compare the efficacy of treatments</strong></span> by plotting
+                    the survival curves for different patient groups. To test the significance of the difference between
+                    these survival curves, the <strong>log-rank test</strong> is commonly used. The log-rank statistic
+                    is calculated as:</p>
 
                 <p>
-                    <em>
-                        Collett, D. (2015). Modelling survival data in medical research (3rd ed.). CRC Press. <a
-                            href=https://doi.org/10.1201/b18348>https://doi.org/10.1201/b18348</a>
-                    </em>
+                    \[
+                    \chi^2=\frac{\left[\sum_{i}\left(O_i-E_i\right)\right]^2}{\sum_{i} V_i}
+                    \]
+                </p>
+
+                <p><small>where \( O_i \) is the observed number of events in the i-th group, \( E_i \) is the expected
+                        number of events under the null hypothesis, and \( V_i \) is the variance of the number of
+                        events.</small></p>
+
+                <p>The null hypothesis of the <strong>log-rank test</strong> is that there is no difference in the
+                    survival experience between the groups being compared. Specifically, it posits that the survival
+                    curves of the different groups are the same, meaning that the probability of the event (such as
+                    death or relapse) occurring at any given time point is the same across all groups.</p>
+
+                <p>In other words, under the null hypothesis, any observed differences in the survival curves are due to
+                    <strong>random variation</strong> rather than a true difference between the groups. If the
+                    <strong>log-rank test</strong> yields a p-value below a pre-specified significance level (e.g.,
+                    0.05), the null hypothesis is rejected, suggesting that there is a statistically significant
+                    difference in survival between the groups.
+                </p>
+
+
+                <em>
+                    Collett, D. (2015). Modelling survival data in medical research (3rd ed.). CRC Press. <a
+                        href=https://doi.org/10.1201/b18348>https://doi.org/10.1201/b18348</a>
+                </em>
                 </p>
                 <p>
                     <em>
@@ -158,8 +177,8 @@ A central tool in survival analysis is the Kaplan-Meier estimate, a non-parametr
                 </p>
             </div>
             <div class=article-tags>
-                <a class="badge badge-light" href=/academia/site/tags/chi-square/>Kaplan-Meier</a>
-                <a class="badge badge-light" href=/academia/site/tags/probabilities/>Clinical Studies</a>
+                <a class="badge badge-light" href=/academia/site/tags/chi-square />Kaplan-Meier</a>
+                <a class="badge badge-light" href=/academia/site/tags/probabilities />Clinical Studies</a>
             </div>
         </div>
     </article>
