@@ -7,7 +7,7 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=author content="Nina Loginova">
     <meta name=description
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
+        content="A framework in the literature for the applicability of the different methods to handle missingness is based on a classification according to the following missingness mechanisms">
     <meta name=theme-color content="#fc6f5c">
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
         integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
@@ -29,9 +29,9 @@
         crossorigin=anonymous></script>
     <link rel=icon type=image/png href=/img/icon.png>
     <meta property="og:description"
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
+        content="A framework in the literature for the applicability of the different methods to handle missingness is based on a classification according to the following missingness mechanisms">
     <meta property="og:locale" content="en-us">
-    <title>Estimands | Nina Loginova</title>
+    <title>Missing data in confirmatory clinical trials | Nina Loginova</title>
 </head>
 
 <body id=top data-spy=scroll data-target=#TableOfContents data-offset=71>
@@ -77,13 +77,14 @@
                     <img class="img-fluid w-100" src=./featured.jpg itemprop=image alt>
                     <span class=article-header-caption>
                         Image credit:
-                        <a href=https://pixabay.com/de/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6973869 />
+                        <a
+                            href=https://pixabay.com/de/users/tungart7-38741244/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8676548 />
                         <strong>Pixabay</strong>
                         </a>
                     </span>
                 </div>
                 <div class=col-lg-8>
-                    <h1 itemprop=name>Estimands</h1>
+                    <h1 itemprop=name>Missing data in confirmatory clinical trials</h1>
                     <meta content itemprop=datePublished>
                     <meta content itemprop=dateModified>
                     <div class=article-metadata>
@@ -99,25 +100,43 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
-                <p>In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.</p>
-                <p>An estimand is essentially the specific aspect of the treatment effect that we aim to measure. It represents the precise question we want to answer about the impact of the treatment. For instance, if a new drug is being tested, the estimand might be how much the drug reduces symptoms compared to a placebo. 
-         
-                </p>
-                <p>
-                    There are several types of estimands, each addressing different aspects of how we measure the treatment effect. One common type is the treatment effect on the entire study population, which considers how well the treatment works if everyone follows the study protocol exactly. Another type looks at the treatment effect specifically for those participants who complete the study, providing insight into the effectiveness among those who adhere to the treatment regimen. Additionally, there are estimands that consider real-world conditions, accounting for the fact that participants might not always follow the treatment instructions perfectly.
+                <p>A framework in the literature for the applicability of the different methods to handle missingness is
+                    based on a classification according to the following missingness mechanisms:</p>
 
+                <ul>
+                    <li>For the dependent variable (conditional on the covariates in the model), if the probability of
+                        an observation being missing does not depend on observed or unobserved measurements then the
+                        observation is Missing Completely At Random (MCAR). A typical example is a patient moving to
+                        another city for non-health reasons. Patients who drop out of a study for this reason could be
+                        considered a random and representative sample from the total study population. </li>
+                    <li>Conditional on the covariates in the model, if the probability of an observation being missing
+                        depends only on observed measurements then the observation is Missing At Random (MAR). This
+                        assumption implies that the behaviour of the post dropout observations can be predicted from the
+                        observed variables, and therefore that response can be estimated without bias using exclusively
+                        the observed data. For example, when a patient drops out due to lack of efficacy reflected by a
+                        series of poor efficacy outcomes that have been observed, it would be appropriate to impute or
+                        model poor efficacy outcomes subsequently for this patient. </li>
+                </ul>
+                <p>To cope with situations where data collection is interrupted before the predetermined last evaluation
+                    timepoint, one widely used single imputation method is Last Observation Carried Forward (LOCF).</p>
+                <p>Baseline Observation Carried Forward (BOCF) is another single imputation approach that is sometimes
+                    used. The use of BOCF may be appropriate in, for example, a chronic pain trial where when a patient
+                    withdraws from treatment it may be reasonable to assume that pain return to its baseline level and
+                    that the patient does not, in the long-term, derive benefit from treatment.</p>
                 <p>
                     <em>
-                        European Medicines Agency. (2020). ICH E9 (R1) addendum on estimands and sensitivity analysis in clinical trials to the guideline on statistical principles for clinical trials. 
-                          <a
-                            href=https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf>https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf</a>
+                        European Medicines Agency. (2024). Guideline on missing data in confirmatory clinical trials.
+                        <a
+                            href=https://www.tga.gov.au/sites/default/files/2024-06/guideline-missing-data-confirmatory-clinical-trials-ema.pdf>https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-Missing
+                        </a>
                     </em>
                 </p>
-                
+
             </div>
             <div class=article-tags>
-                <a class="badge badge-light" href=/academia/site/tags/chi-square/>Estimands</a>
-                <a class="badge badge-light" href=/academia/site/tags/probabilities/>Clinical Studies</a>
+                <a class="badge badge-light" href=/academia/site/tags/chi-square />Missing data in confirmatory clinical
+                trials</a>
+                <a class="badge badge-light" href=/academia/site/tags/probabilities />Clinical Studies</a>
             </div>
         </div>
     </article>

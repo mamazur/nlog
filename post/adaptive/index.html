@@ -7,7 +7,7 @@
     <meta http-equiv=X-UA-Compatible content="IE=edge">
     <meta name=author content="Nina Loginova">
     <meta name=description
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
+        content="Adaptive designs are becoming increasingly important in clinical trials, reflecting a shift towards more flexible and efficient study methodologies. Unlike fixed designs, adaptive designs allow for modifications to the trial procedures based on interim data without compromising the integrity or validity of the study. This flexibility can lead to more ethical and cost-effective trials by enabling early stopping for efficacy, futility, or safety concerns, as well as adjustments to sample sizes or treatment allocations.">
     <meta name=theme-color content="#fc6f5c">
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css
         integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin=anonymous>
@@ -29,9 +29,9 @@
         crossorigin=anonymous></script>
     <link rel=icon type=image/png href=/img/icon.png>
     <meta property="og:description"
-        content="In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.">
+        content="Adaptive designs are becoming increasingly important in clinical trials, reflecting a shift towards more flexible and efficient study methodologies. Unlike fixed designs, adaptive designs allow for modifications to the trial procedures based on interim data without compromising the integrity or validity of the study. This flexibility can lead to more ethical and cost-effective trials by enabling early stopping for efficacy, futility, or safety concerns, as well as adjustments to sample sizes or treatment allocations.">
     <meta property="og:locale" content="en-us">
-    <title>Estimands | Nina Loginova</title>
+    <title>Adaptive Designs Clinical Trials | Nina Loginova</title>
 </head>
 
 <body id=top data-spy=scroll data-target=#TableOfContents data-offset=71>
@@ -77,13 +77,14 @@
                     <img class="img-fluid w-100" src=./featured.jpg itemprop=image alt>
                     <span class=article-header-caption>
                         Image credit:
-                        <a href=https://pixabay.com/de/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6973869 />
+                        <a
+                            href=https://pixabay.com/de/users/thedigitalartist-202249/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=8069992 />
                         <strong>Pixabay</strong>
                         </a>
                     </span>
                 </div>
                 <div class=col-lg-8>
-                    <h1 itemprop=name>Estimands</h1>
+                    <h1 itemprop=name>Adaptive Designs Clinical Trials</h1>
                     <meta content itemprop=datePublished>
                     <meta content itemprop=dateModified>
                     <div class=article-metadata>
@@ -99,25 +100,56 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
-                <p>In clinical trials, one of the fundamental goals is to understand the effect of a treatment or intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This is where the concept of estimands becomes crucial.</p>
-                <p>An estimand is essentially the specific aspect of the treatment effect that we aim to measure. It represents the precise question we want to answer about the impact of the treatment. For instance, if a new drug is being tested, the estimand might be how much the drug reduces symptoms compared to a placebo. 
-         
-                </p>
-                <p>
-                    There are several types of estimands, each addressing different aspects of how we measure the treatment effect. One common type is the treatment effect on the entire study population, which considers how well the treatment works if everyone follows the study protocol exactly. Another type looks at the treatment effect specifically for those participants who complete the study, providing insight into the effectiveness among those who adhere to the treatment regimen. Additionally, there are estimands that consider real-world conditions, accounting for the fact that participants might not always follow the treatment instructions perfectly.
+                <p>Adaptive designs are becoming increasingly important in clinical trials, reflecting a shift towards
+                    more flexible and efficient study methodologies. Unlike fixed designs, adaptive designs allow for
+                    modifications to the trial procedures based on interim data without compromising the integrity or
+                    validity of the study. This flexibility can lead to more ethical and cost-effective trials by
+                    enabling early stopping for efficacy, futility, or safety concerns, as well as adjustments to sample
+                    sizes or treatment allocations.</p>
+
+
+                <p>A key focus is controlling the Type I error rate, which is crucial to avoid false positive results
+                    when making adaptations during a trial. </p>
+
+                <p>Techniques such as alpha-spending functions and p-value combination methods have been developed to
+                    manage the Type I error rate. Alpha-spending functions allocate portions of the total allowable Type
+                    I error rate across interim analyses, ensuring the cumulative error rate remains within acceptable
+                    limits. P-value combination methods aggregate data from different stages of a trial while
+                    controlling for overall significance.</p>
+                <p>Sample size re-estimation allows for adjustments to the sample size based on interim results, helping
+                    to ensure that a trial is adequately powered without enrolling unnecessary participants. Both
+                    unblinded and blinded sample size re-estimation methods are used, each with different implications
+                    for trial integrity and complexity.</p>
+                <p>In trials with multiple interim analyses or endpoints, controlling the Type I error rate requires
+                    careful handling of multiple testing. Approaches such as the Bonferroni correction, Holm’s
+                    procedure, and gatekeeping strategies are employed to adjust for the increased risk of false
+                    positives. Group sequential designs are also used, allowing for planned interim analyses with
+                    pre-specified decision rules to guide trial continuation or modification.</p>
+                <p>To mitigate operational bias, where knowledge of interim results could influence trial conduct,
+                    confirmatory adaptive designs must be carefully designed with rigorous blinding and randomization
+                    protocols. These measures are essential to maintaining the statistical integrity of the trial,
+                    ensuring that any adaptations do not introduce bias or invalidate the results.</p>
 
                 <p>
                     <em>
-                        European Medicines Agency. (2020). ICH E9 (R1) addendum on estimands and sensitivity analysis in clinical trials to the guideline on statistical principles for clinical trials. 
-                          <a
-                            href=https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf>https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf</a>
+                        Bauer, P., Bretz, F., Dragalin, V., König, F., and Wassmer, G. (2016) Twenty-five years of
+                        confirmatory adaptive designs: opportunities and pitfalls. Statist. Med., 35: 325-347.
+                        <a href=https://doi.org/10.1002/sim.6472>doi: 10.1002/sim.6472
+                        </a>
+                    </em>
+                    <em>
+                        U.S. Food and Drug Administration. (2019). Adaptive design clinical trials of drugs and
+                        biologics. Guidance for industry.
+                        <a href=https://www.fda.gov/media/78495/download>https://www.fda.gov/media/78495/download
+                        </a>
                     </em>
                 </p>
-                
+
             </div>
             <div class=article-tags>
-                <a class="badge badge-light" href=/academia/site/tags/chi-square/>Estimands</a>
-                <a class="badge badge-light" href=/academia/site/tags/probabilities/>Clinical Studies</a>
+                <a class="badge badge-light" href=/academia/site/tags/chi-square />Missing data in confirmatory clinical
+                trials</a>
+                <a class="badge badge-light" href=/academia/site/tags/probabilities />Clinical Studies</a>
             </div>
         </div>
     </article>
