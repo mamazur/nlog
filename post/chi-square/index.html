@@ -91,51 +91,65 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
+
+                <p>The <strong>multivariate chi-squared distribution</strong> is an extension of the univariate
+                    chi-squared distribution to multiple variables. It is often used in multivariate statistics,
+                    particularly in hypothesis testing and multivariate analysis. Examples include comparing covariance
+                    matrices across groups, testing models in multivariate regression, or assessing the goodness-of-fit
+                    for multidimensional data.</p>
+
+                <p>If \( \mathbf{Z}_1, \mathbf{Z}_2, \dots , \mathbf{Z}_\nu \) are independent and identically
+                    distributed Gaussian random vectors with correlation matrix \( R \), then the sum of their squares
+                    \( \mathbf{X} \) follows a multivariate chi-squared distribution.</p>
+
+                <p>The cumulative distribution function of the maximum of \( M \) dependent random variables \( X_1,
+                    X_2, \dots, X_M \) is:</p>
+
                 <p>
-                    The multivariate chi-squared distribution is an extension of the univariate chi-squared distribution
-                    to multiple variables. It is often used in multivariate statistics, particularly in hypothesis
-                    testing and multivariate analysis. Examples include comparing covariance matrices across groups,
-                    testing models in multivariate regression, or assessing the goodness-of-fit for multidimensional
-                    data.
-                    If Z_1,Z_2,…,Z_ν are independent and identically distributed Gaussian random vectors with
-                    correlation matrix R, then the sum of their squares X follows multivariate chi-squared distribution.
-                    The cumulative distribution function of the maximum of M dependent random variables X_1,X_2,…,X_M is
-                    F_M (x)≡F_M (x,ν,R)≔P(⋂<em>(j=1)^M▒{ X_j≤x})
-                        where X=(X_1,…,X_M )^T has components X_j≔∑</em>
-                    (i=1)^ν▒Z_ij^2  &ldquo;for &rdquo;j=1,…,M.
+                    \[
+                    F_M(x) \equiv F_M(x, \nu, R) := P \left( \bigcap_{j=1}^M \{X_j \leq x\} \right)
+                    \]
                 </p>
+
+                <p>where \( \mathbf{X} = (X_1, \dots, X_M)^\top \) and each \( X_j = \sum_{i=1}^{\nu} Z_{ij}^2 \) for \(
+                    j = 1, \dots, M \).</p>
+
                 <p>The multivariate chi-squared distribution does not have a simple closed-form expression for its
                     distribution function. Its distribution function involves integrating over all possible values in a
-                    multidimensional space. In general, this kind of multidimensional integration cannot be easily
-                    solved analytically.
-                    The R package mvtnorm lacks direct support for multivariate chi-squared distribution calculations,
-                    while PROC FREQ in SAS is limited to univariate and bivariate analyses, without tools for
-                    multivariate chi-squared probabilities. As a result, practical calculations rely on numerical
-                    methods or Monte Carlo simulations, particularly for high-dimensional cases.
-                    Under some specific assumptions, there is a possibility to use methods from matrix factorization and
-                    probability theory to make these calculations easier and more efficient. (Stange et. al, 2015).
-                    This computational methods “for evaluating and approximating M-variate chi-square probabilities for
-                    (in principle) arbitrary dimension M and arbitrary degrees of freedom” work if “the correlation
-                    structure in the k-variate marginal distributions is given (or can be approximated well) by low-rank
-                    correlation matrices” (Stange et. al, 2015). It means, that if “the underlying correlation matrix
-                    fulfills certain structural properties”, then quantiles [of multivariate chi-squared distribution]
-                    can be computed numerically. (Kim et. al, 2023). The main idea for approximating multivariate
-                    chi-squared distribution is to use the low rank factorization of the correlation matrices to break
-                    the integration down to computing lower dimensional marginal distributions, which is possible with
-                    standard computer programs.</p>
-                <p>
-                    We developed MATLAB programs to implement these methods and demonstrated that our approach was both
-                    accurate and efficient by comparing it to traditional methods. We used real genetic data to show its
-                    practical application.
-                    In this genetic association studies, our goal was to test whether there was a significant
-                    association between genetic variations and a particular phenotype. It led to simultaneous
-                    categorical data analysis, meaning that many contingency tables had to be analysed simultaneously,
-                    where every single contingency table summarizes study data for one position (locus) on the human
-                    genome. Locus-specific chi-squared statistics typically exhibit strong dependencies within blocks of
-                    genetic loci, because of the biological mechanism of inheritance. That means, the correlation
-                    matrices are low-rank and the assumptions needed for our computational methods were met, also with
-                    respect to the familywise error rate (FWER) control.
+                    multidimensional space, which cannot be easily solved analytically.</p>
 
+                <h2>Challenges and Computational Methods</h2>
+
+                <p>Due to the complexities of the multivariate chi-squared distribution, practical calculations often
+                    rely on numerical methods or Monte Carlo simulations, especially in high-dimensional cases. Software
+                    packages like the <strong>R package mvtnorm</strong> do not directly support multivariate
+                    chi-squared distribution calculations, and <strong>SAS's PROC FREQ</strong> is limited to univariate
+                    and bivariate analyses without tools for multivariate chi-squared probabilities.</p>
+
+                <p>However, under certain assumptions, matrix factorization methods can be used to approximate
+                    multivariate chi-squared probabilities more efficiently "for (in principle) arbitrary dimension M
+                    and arbitrary degrees of freedom” (Stange et al., 2015). These computational methods are based on
+                    the idea that the correlation structure in the k-variate marginal distributions can be approximated
+                    using low-rank correlation matrices.</p>
+
+                <p>If “the underlying correlation matrix fulfills certain structural properties”(Kim et. al, 2023), the
+                    quantiles of the multivariate chi-squared distribution can be computed numerically. The <strong>main
+                        idea</strong> is to use low-rank factorization of the correlation matrices, reducing the problem
+                    to the computation of lower-dimensional marginal distributions, which is possible with standard
+                    computer programs.</p>
+
+                <h2>Applications in Genetic Data</h2>
+
+                <p>We developed MATLAB programs to implement these methods and demonstrated their accuracy and
+                    efficiency by comparing them to traditional approaches. Using real genetic data, we applied our
+                    computational methods to test for significant associations between genetic variations and specific
+                    phenotypes.</p>
+
+                <p>In genetic association studies, it is common to analyze many contingency tables simultaneously, each
+                    representing study data for a single position (locus) on the genome. Locus-specific chi-squared
+                    statistics often exhibit strong dependencies due to the biological mechanism of inheritance. These
+                    dependencies lead to low-rank correlation matrices, which meet the assumptions required for our
+                    computational methods under <strong>familywise error rate (FWER)</strong> control.</p>
                 <div class=col-lg-8>
                     <img class="img-fluid w-60" loading="lazy" src=./dna.png alt="dna">
                     <span class=article-header-caption>
@@ -145,35 +159,43 @@
                         </a>
                     </span>
                 </div>
-                </p>
-                <p>
 
+                <h2>Multiple Hypothesis Testing</h2>
 
-                    When testing many hypotheses, the probability of at least one false positive increases (inflated
-                    Type I error rates). This problem is usually addressed with multiple testing correction methods,
-                    like the Bonferroni correction or the False Discovery Rate (FDR). However, these methods assume that
-                    each test is independent, which is often not true in real-world data.
-                    The effective number of tests tries to account for the dependence or correlation among tests.
-                    Instead of assuming that all tests are independent, it recognizes that correlated tests provide less
-                    new information than completely independent tests. By calculating the effective number of tests, we
-                    can adjust for the fact that some tests are not entirely new but share information with others.
-                    A linkage disequilibrium (LD) matrix is a representation of the pairwise correlation between genetic
-                    variants within a particular region of the genome. It is used to quantify how much the presence of
-                    one genetic variant is non-randomly associated with another variant in a population.
-                    In (Stange et. al, 2015) we compute “an effective number of tests of order 3 based on LD information
-                    taken from the international HapMap project (<a
-                        href=http://hapmap.ncbi.nlm.nih.gov/)>http://hapmap.ncbi.nlm.nih.gov/)</a>
-                    . For exemplary purposes, we restrict our attention to loci on chromosome 21 in the CHD population
-                    (Chinese in Metropolitan Denver). In total this chromosome comprises M = 18,143 loci. We divided the
-                    chromosome into B =363 blocks of size 50 each (notice the last of these blocks comprises only 43
-                    loci). We consider ν = 2 degrees of freedom corresponding to (2 × 3) contingency tables (i.e. to
-                    diploid genotypes) and make the assumption that loci from different blocks lead to stochastically
-                    independent χ2 test statistics. Under this assumption the effective number of tests can be
-                    calculated for every block separately, and the total effective number of tests is the sum of the
-                    block-specific ones.” “For the entire chromosome we obtained an effective number of tests of order 3
-                    [equal to] 13,676, meaning that effectively only approximately two-third of the M = 18,143 loci
-                    contribute to the calibration with respect to the FWER level [0,05].”
-                </p>
+                <p>In large-scale genetic studies, testing multiple hypotheses increases the risk of false positives
+                    (Type I errors). Traditional multiple testing correction methods, like the <strong>Bonferroni
+                        correction</strong> or the <strong>False Discovery Rate (FDR)</strong>, assume that all tests
+                    are independent, which is not the case in real-world data.</p>
+
+                <p>To account for dependence among tests, we calculate the <strong>effective number of tests</strong>,
+                    which adjusts for correlations. Instead of assuming that all tests are independent, it recognizes
+                    that correlated tests provide less new information than completely independent tests. By calculating
+                    the effective number of tests, we can adjust for the fact that some tests are not entirely new but
+                    share information with others.</p>
+
+                <p>A <strong>linkage disequilibrium (LD) matrix</strong> represents the pairwise correlation between
+                    genetic variants within a particular region of the genome. It quantifies how much the presence of
+                    one variant is non-randomly associated with another.</p>
+
+                <p>In (Stange et. al, 2015) we compute “an effective number of tests of order 3 based on LD information
+                    taken from the international HapMap project (<a href="http://hapmap.ncbi.nlm.nih.gov/"
+                        target="_blank">http://hapmap.ncbi.nlm.nih.gov/</a>).
+                    For exemplary purposes, we restrict our attention to loci on chromosome 21 in the CHD population
+                    (Chinese in Metropolitan Denver).
+                    In total this chromosome comprises M = 18,143 loci.
+                    We divided the chromosome into B = 363 blocks of size 50 each (notice the last of these blocks
+                    comprises only 43 loci).
+                    We consider ν = 2 degrees of freedom corresponding to (2 × 3) contingency tables (i.e. to diploid
+                    genotypes)
+                    and make the assumption that loci from different blocks lead to stochastically independent χ² test
+                    statistics.
+                    Under this assumption the effective number of tests can be calculated for every block separately,
+                    and the total effective number of tests is the sum of the block-specific ones.</p>
+
+                <p>For the entire chromosome we obtained an effective number of tests of order 3 [equal to] 13,676,
+                    meaning that effectively only approximately two-third of the M = 18,143 loci contribute to the
+                    calibration with respect to the FWER level [0.05].”</p>
+
                 <div class=col-lg-12>
                     <figure>
                         <img class="img-fluid w-80" loading="lazy" src=./featured1.jpg
@@ -188,10 +210,12 @@
                     </figure>
                 </div>
 
-                <p>Using numerical experiments we showed that our computational methods are faster and more efficient
-                    than traditional Monte Carlo simulations, allowing for precise calculations in less time. The
-                    efficiency of these methods can be increased with better techniques for matrix factorization, which
-                    would improve the accuracy of calculating the multivariate chi-square probabilities.</p>
+                <p>We showed through numerical experiments that our methods are faster and more efficient than
+                    traditional Monte Carlo simulations. The efficiency of our approach can be further improved with
+                    advanced techniques for matrix factorization, enhancing the accuracy of multivariate chi-squared
+                    probability calculations.</p>
+
+
                 <p>
                     <em>Eunseop Kim, Steven N. MacEachern & Mario Peruggia (2023) Empirical likelihood for the analysis
                         of experimental designs, Journal of Nonparametric Statistics, 35:4, 709-732, DOI:

@@ -92,29 +92,107 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
-                <p>A framework in the literature for the applicability of the different methods to handle missingness is
-                    based on a classification according to the following missingness mechanisms:</p>
 
+                <h3>Introduction</h3>
+                <p>
+                    Missing data is a critical issue in clinical trials, particularly in confirmatory studies where the
+                    accuracy of results can directly influence regulatory and clinical decisions. There is no single
+                    method that universally adjusts for missing data, and the choice of approach can affect the
+                    conclusions of a trial. Efforts should be made to minimize missing data, as its presence can lead to
+                    biased outcomes. For instance, if the missing data disproportionately favor the experimental
+                    treatment, this may distort the analysis.
+                </p>
+                <p>
+                    It is crucial to investigate the robustness of trial results by employing appropriate sensitivity
+                    analyses, which incorporate different assumptions about the nature of the missing data. Patients may
+                    withdraw from a trial for many reasons, including adverse events, treatment success or failure, or
+                    other unrelated circumstances like relocation. When data is missing because patients withdraw from a
+                    trial, it poses a significant risk of bias in estimating the treatment effect.
+                </p>
+
+                <h3>Handling of Missing Data</h3>
+                <p>Missing data can be categorized under three general types:</p>
                 <ul>
-                    <li>For the dependent variable (conditional on the covariates in the model), if the probability of
-                        an observation being missing does not depend on observed or unobserved measurements then the
-                        observation is Missing Completely At Random (MCAR). A typical example is a patient moving to
-                        another city for non-health reasons. Patients who drop out of a study for this reason could be
-                        considered a random and representative sample from the total study population. </li>
-                    <li>Conditional on the covariates in the model, if the probability of an observation being missing
-                        depends only on observed measurements then the observation is Missing At Random (MAR). This
-                        assumption implies that the behaviour of the post dropout observations can be predicted from the
-                        observed variables, and therefore that response can be estimated without bias using exclusively
-                        the observed data. For example, when a patient drops out due to lack of efficacy reflected by a
-                        series of poor efficacy outcomes that have been observed, it would be appropriate to impute or
-                        model poor efficacy outcomes subsequently for this patient. </li>
+                    <li>
+                        <strong>Missing Completely at Random (MCAR):</strong> The probability of missing data is
+                        unrelated to any observed or unobserved data. A typical example is a patient moving to another
+                        city for non-health reasons. Patients who drop out of a study for this reason could be
+                        considered a random and representative sample from the total study population.
+                    </li>
+                    <li>
+                        <strong>Missing at Random (MAR):</strong> The likelihood of missing data is related to observed
+                        data but not the unobserved data. For instance, when a patient drops out due to lack of efficacy
+                        reflected by a series of poor efficacy outcomes that have been observed, it would be appropriate
+                        to impute or model poor efficacy outcomes subsequently for this patient.
+                    </li>
+                    <li>
+                        <strong>Missing Not at Random (MNAR):</strong> The missing data is related to the unobserved
+                        outcomes, making it more challenging to handle. For example, it may happen that after a series
+                        of visits with good outcomes, a patient drops out due to lack of efficacy.
+                    </li>
                 </ul>
-                <p>To cope with situations where data collection is interrupted before the predetermined last evaluation
-                    timepoint, one widely used single imputation method is Last Observation Carried Forward (LOCF).</p>
-                <p>Baseline Observation Carried Forward (BOCF) is another single imputation approach that is sometimes
-                    used. The use of BOCF may be appropriate in, for example, a chronic pain trial where when a patient
-                    withdraws from treatment it may be reasonable to assume that pain return to its baseline level and
-                    that the patient does not, in the long-term, derive benefit from treatment.</p>
+
+                <h3>Methods of Handling Missing Data</h3>
+                <p>
+                    In confirmatory trials, primary analyses must ensure that any bias in favor of the experimental
+                    treatment is excluded. Various imputation techniques can help handle missing data while considering
+                    different assumptions.
+                </p>
+                <p>
+                    <strong>Single imputation methods</strong>, like <strong>Last Observation Carried Forward
+                        (LOCF)</strong>, use the last recorded value for a patient to fill in subsequent missing data.
+                    While simple, this method can lead to biased estimates, particularly if patients withdraw early due
+                    to adverse events. Similarly, <strong>Baseline Observation Carried Forward (BOCF)</strong> assumes
+                    that a patient’s condition reverts to baseline, useful in scenarios like chronic pain trials where
+                    symptoms may return to baseline after discontinuation.
+                </p>
+                <p>
+                    Other methods, like <strong>best/worst case imputation</strong>, replace missing data with either
+                    the best or worst possible outcomes, depending on the reason for withdrawal. This method, however,
+                    is often used in sensitivity analyses rather than as the primary approach.
+                </p>
+                <p>
+                    <strong>Multiple imputation (MI)</strong> generates multiple datasets, replaces missing data with
+                    plausible values, and combines the results to produce more reliable estimates. MI is preferred in
+                    many cases as it incorporates the uncertainty around missing values, reducing bias compared to
+                    single imputation methods.
+                </p>
+
+
+                <h3>Mixed Models and Generalized Estimating Equations</h3>
+                <p>
+                    When analyzing repeated measures data, methods like Mixed-Effect Models for Repeated Measures (MMRM)
+                    and generalized estimating equations (GEE) are commonly used. These models account for the
+                    correlation between repeated measurements over time, offering a robust approach to handling missing
+                    data.
+                </p>
+                <p>
+                    <strong>Mixed-Effect Models for Repeated Measures (MMRM)</strong> are frequently employed in
+                    clinical trials, especially when dealing with outcomes measured at multiple time points. MMRM
+                    handles missing data without imputing values by using all available information and estimating
+                    parameters through maximum likelihood.
+                </p>
+                <p>
+                    For example, in a clinical trial comparing a drug to a placebo for patients with chronic pain, where
+                    pain levels are measured at baseline and weeks 4, 8, and 12, some patients may miss visits. The MMRM
+                    model is given by:
+                </p>
+                <p style="text-align:center;">
+                    Y<sub>ij</sub> = β<sub>0</sub> + β<sub>1</sub> (Drug vs. Placebo)<sub>i</sub> + β<sub>2</sub>
+                    (Time)<sub>j</sub> + β<sub>3</sub> (Drug × Time)<sub>ij</sub> + b<sub>i</sub> + ε<sub>ij</sub>
+                </p>
+                <p>
+                    This analyzes the outcome (Y<sub>ij</sub>) for patient (i) at time (j), where the fixed effects (β)
+                    represent the treatment, time, and their interaction, while the random effect (b<sub>i</sub>)
+                    captures differences between patients, and ε<sub>ij</sub> is the residual error.</p>
+                <p>
+                    MMRM incorporates all available data and the correlation between measurements over time, providing a
+                    more accurate assessment of treatment effects even when data is missing. For instance, if a patient
+                    misses a follow-up visit due to worsening symptoms, MMRM still leverages the data from their
+                    previous assessments, ensuring their experience contributes to understanding the drug's
+                    effectiveness. This way, even with incomplete data, it is possible to gain insights that might be
+                    overlooked with more simplistic analysis methods.
+                </p>
                 <p>
                     <em>
                         European Medicines Agency. (2024). Guideline on missing data in confirmatory clinical trials.

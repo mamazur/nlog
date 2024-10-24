@@ -92,32 +92,94 @@
         </div>
         <div class=article-container>
             <div class=article-style itemprop=articleBody>
-                <p>In clinical trials, one of the fundamental goals is to understand the effect of a treatment or
-                    intervention. To achieve this, we need to clearly define what exactly we are trying to measure. This
-                    is where the concept of estimands becomes crucial.</p>
-                <p>An estimand is essentially the specific aspect of the treatment effect that we aim to measure. It
-                    represents the precise question we want to answer about the impact of the treatment. For instance,
-                    if a new drug is being tested, the estimand might be how much the drug reduces symptoms compared to
-                    a placebo.
 
-                </p>
-                <p>
-                    There are several types of estimands, each addressing different aspects of how we measure the
-                    treatment effect. One common type is the treatment effect on the entire study population, which
-                    considers how well the treatment works if everyone follows the study protocol exactly. Another type
-                    looks at the treatment effect specifically for those participants who complete the study, providing
-                    insight into the effectiveness among those who adhere to the treatment regimen. Additionally, there
-                    are estimands that consider real-world conditions, accounting for the fact that participants might
-                    not always follow the treatment instructions perfectly.
+                <p>In clinical trials, it is essential to clearly define the goal of the study and what exactly is being
+                    measured. To address this, the European Medicines Agency introduced the concept of
+                    <em>estimands</em> in their 2020 addendum on estimands and sensitivity analysis. This framework
+                    helps align the planning, design, conduct, analysis, and interpretation of clinical trials. An
+                    estimand provides a precise description of the treatment effect that corresponds to the clinical
+                    question posed by the trial.</p>
 
-                <p>
-                    <em>
-                        European Medicines Agency. (2020). ICH E9 (R1) addendum on estimands and sensitivity analysis in
-                        clinical trials to the guideline on statistical principles for clinical trials.
-                        <a
-                            href=https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf>https://www.ema.europa.eu/en/documents/scientific-guideline/ich-e9-r1-addendum-estimands-and-sensitivity-analysis-clinical-trials-guideline-statistical-principles-clinical-trials-step-5_en.pdf</a>
-                    </em>
-                </p>
+                <h2>What Is an Estimand?</h2>
+
+                <p>An <strong>estimand</strong> summarizes what outcomes would occur in the same patients under
+                    different treatment conditions being compared. It provides clarity by specifying the population,
+                    treatment, variable (endpoint), and how intercurrent events — events that happen after treatment
+                    initiation — will be handled. Intercurrent events, such as treatment discontinuation or use of
+                    additional medication, must be accounted for as they can affect the interpretation or measurement of
+                    the treatment effect.</p>
+
+                <p>The estimand is complemented by the <strong>estimator</strong>, a method used to calculate the
+                    estimated value of the treatment effect based on clinical trial data, which ultimately results in
+                    the <strong>estimate</strong>, a numerical value representing the treatment effect.</p>
+
+                <h2>Why Are Estimands Important?</h2>
+
+                <p>The concept of estimands ensures that the treatment effect being measured is clearly defined and
+                    addresses the clinical question at hand. This approach avoids potential confusion caused by
+                    intercurrent events, which can obscure the interpretation of trial results if not properly accounted
+                    for. For example, in oncology trials, patients may switch treatments, and the way these events are
+                    managed in the trial design can affect the trial’s conclusions. By explicitly addressing these
+                    events within the estimand framework, the trial can provide a more accurate and relevant assessment
+                    of the treatment effect.</p>
+
+                <h2>Attributes of an Estimand</h2>
+
+                <p>To define an estimand, several key attributes must be specified:</p>
+                <ol>
+                    <li><strong>Treatment Condition</strong>: This includes both the treatment of interest and any
+                        alternative treatments for comparison. These could involve individual interventions or more
+                        complex regimens.</li>
+                    <li><strong>Population</strong>: The patient population targeted by the trial, which may be the
+                        entire population or a specific subgroup based on characteristics such as baseline measurements
+                        or specific intercurrent events.</li>
+                    <li><strong>Variable (Endpoint)</strong>: The clinical outcome or measurement used to address the
+                        trial’s question. This can include whether a patient experienced an intercurrent event, and how
+                        that event is factored into the trial's outcome.</li>
+                    <li><strong>Handling of Intercurrent Events</strong>: Strategies are needed to address intercurrent
+                        events. These may include treatment policy, hypothetical strategies, or focusing on treatment up
+                        to the point of the event. The choice of strategy affects how the trial data are interpreted.
+                    </li>
+                </ol>
+
+                <h2>Handling Intercurrent Events</h2>
+
+                <p>Intercurrent events can significantly affect how the results of a clinical trial are interpreted.
+                    These events, such as treatment discontinuation, the introduction of additional medication, or even
+                    a patient’s death, occur after the initiation of treatment and can complicate the measurement of
+                    treatment effects. Addressing these events is essential when defining an estimand because they may
+                    either influence the interpretation of results or make it impossible to measure the planned
+                    outcomes. Several strategies can be used to manage intercurrent events, ensuring that the clinical
+                    question of interest remains clear.</p>
+
+
+                <ol>
+                    <li><strong>Treatment Policy Strategy</strong>: In this approach, all intercurrent events are
+                        considered part of the treatment process. For example, if a patient discontinues the treatment,
+                        the outcome is still measured as if the patient were continuing in the study. This strategy
+                        reflects a <em>real-world</em> approach, where treatment changes are part of normal clinical
+                        practice.</li>
+                    <li><strong>Hypothetical Strategy</strong>: Here, the effect of the treatment is estimated by
+                        imagining a scenario in which the intercurrent event did not occur. For instance, if a patient
+                        discontinues treatment due to an adverse effect, the hypothetical strategy assumes the patient
+                        continued treatment, allowing the estimand to assess what would have happened under ideal
+                        conditions.</li>
+                    <li><strong>While on Treatment Strategy</strong>: This strategy focuses on the period during which
+                        the patient remains on the initially assigned treatment. Once the patient experiences an
+                        intercurrent event (e.g., treatment discontinuation), data after that point are excluded from
+                        the analysis. The effect is measured only while the patient is under the treatment regimen.</li>
+                    <li><strong>Principal Stratum Strategy</strong>: This approach focuses on a specific subgroup of
+                        patients defined by whether or not they experience an intercurrent event. For example, the
+                        estimand may target only patients who do not switch treatments during the trial, providing
+                        insight into treatment effects for this specific group.</li>
+                </ol>
+
+
+                <p>The use of estimands ensures that the goals of a clinical trial are clearly defined and that the
+                    impact of treatment is measured accurately. By addressing intercurrent events and providing a
+                    structured approach to trial design, estimands help align the planning, analysis, and interpretation
+                    phases of clinical trials, ultimately leading to better clarity in the assessment of treatment
+                    effects. </p>
 
             </div>
             <div class=article-tags>
